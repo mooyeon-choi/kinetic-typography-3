@@ -30,6 +30,7 @@ class App {
 
     this.canvas.width = this.stageWidth * this.pixelRatio;
     this.canvas.height = this.stageHeight * this.pixelRatio;
+    console.log(this.canvas.width, this.canvas.height);
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
     this.visual.show(this.stageWidth, this.stageHeight);

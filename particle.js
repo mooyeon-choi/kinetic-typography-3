@@ -63,7 +63,7 @@ export class Particle {
     ctx.beginPath();
     ctx.fillStyle = color;
 
-    const fontWidth = this.fontSize === 14 ? 700 : 300;
+    const fontWidth = this.fontSize === 14 ? 40 : 20;
     const fontSize = this.fontSize;
     const fontName = "Hind";
     ctx.font = `${fontWidth} ${fontSize}px ${fontName}`;
