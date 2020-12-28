@@ -14,8 +14,15 @@ export class Text {
     this.canvas.height = stageHeight;
 
     const myText = str;
-    const fontWidth = stageWidth > 700 ? 700 : 300;
-    const fontSize = stageWidth > 700 ? 800 : 400;
+    let fontWidth;
+    let fontSize;
+    if (str === "M") {
+      fontWidth = stageWidth > 700 ? 700 : 350;
+      fontSize = stageWidth > 700 ? 800 : 400;
+    } else {
+      fontWidth = stageWidth > 700 ? 700 : 330;
+      fontSize = stageWidth > 700 ? 800 : 500;
+    }
     const fontName = "Hind";
 
     this.ctx.clearRect(0, 0, stageWidth, stageHeight);

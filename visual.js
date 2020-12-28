@@ -18,11 +18,12 @@ export class Visual {
     };
 
     document.addEventListener("pointermove", this.onMove.bind(this), false);
+    document.addEventListener("touchmove", this.onTouchMove.bind(this), false);
   }
 
   show(stageWidth, stageHeight) {
-    const fontSize = stageWidth > 700 ? 14 : 7;
-    const fontWidth = stageWidth > 700 ? 26 : 13;
+    const fontSize = stageWidth > 700 ? 14 : 10;
+    const fontWidth = stageWidth > 700 ? 26 : 19;
 
     const str = this.textArr[
       Math.round(Math.random() * (this.textArr.length - 1))
@@ -63,5 +64,10 @@ export class Visual {
   onMove(e) {
     this.mouse.x = e.clientX;
     this.mouse.y = e.clientY;
+  }
+
+  onTouchMove(e) {
+    this.mouse.x = e.touches[0].clientX;
+    this.mouse.y = e.touches[0].clientY;
   }
 }
