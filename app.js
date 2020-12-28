@@ -9,12 +9,6 @@ class App {
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
-    document.body.addEventListener(
-      "touchstart",
-      this.onTouchStart.bind(this),
-      false
-    );
-
     WebFont.load({
       google: {
         families: ["Hind:700"],
@@ -48,10 +42,6 @@ class App {
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
     this.visual.animate(this.ctx, t);
-  }
-
-  onTouchStart(e) {
-    e.stopPropagation();
   }
 }
 
