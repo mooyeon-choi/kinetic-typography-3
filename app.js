@@ -51,7 +51,7 @@ class App {
   }
 
   onTouchStart(e) {
-    e.preventDefault();
+    e.stopPropagation();
   }
 }
 
