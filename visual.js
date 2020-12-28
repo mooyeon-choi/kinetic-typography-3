@@ -21,14 +21,17 @@ export class Visual {
   }
 
   show(stageWidth, stageHeight) {
+    const fontSize = stageWidth > 700 ? 14 : 7;
+    const fontWidth = stageWidth > 700 ? 26 : 13;
+
     const str = this.textArr[
       Math.round(Math.random() * (this.textArr.length - 1))
     ];
-    this.pos = this.text.setText(str, 26, stageWidth, stageHeight);
+    this.pos = this.text.setText(str, fontWidth, stageWidth, stageHeight);
 
     this.particles = [];
     for (let i = 0; i < this.pos.length; i++) {
-      const item = new Particle(this.pos[i]);
+      const item = new Particle(this.pos[i], fontSize);
       this.particles.push(item);
     }
   }

@@ -4,7 +4,9 @@ const FRICTION = 0.86;
 const COLOR_SPEED = 0.12;
 
 export class Particle {
-  constructor(pos) {
+  constructor(pos, fontSize) {
+    this.fontSize = fontSize;
+
     this.savedX = pos.x;
     this.savedY = pos.y;
     this.x = pos.x;
@@ -61,8 +63,8 @@ export class Particle {
     ctx.beginPath();
     ctx.fillStyle = color;
 
-    const fontWidth = 700;
-    const fontSize = 14;
+    const fontWidth = this.fontSize === 14 ? 700 : 300;
+    const fontSize = this.fontSize;
     const fontName = "Hind";
     ctx.font = `${fontWidth} ${fontSize}px ${fontName}`;
     ctx.textBaseline = "middle";
